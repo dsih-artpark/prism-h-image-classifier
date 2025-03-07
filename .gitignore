@@ -148,8 +148,8 @@ data/**
 *.json
 
 # Ignore virtual environment folder
-venv/
 .venv/
+venv/
 
 # Ignore cache files
 __pycache__/
