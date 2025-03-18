@@ -165,3 +165,6 @@ __pycache__/
 all_them_images/
 *.jpg
 *.png
+
+# Ignore compiled Python files
+*.pyo
