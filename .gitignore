@@ -160,3 +160,8 @@ __pycache__/
 
 # Jupyter stuff
 .ipynb_checkpoints/
+
+# dataset
+all_them_images/
+*.jpg
+*.png
