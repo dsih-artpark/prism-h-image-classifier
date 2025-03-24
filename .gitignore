@@ -167,3 +167,34 @@ all_them_images/
 *.png
 # Ignore compiled Python files
 *.pyo
+
+# ArtPark specific
+# Preprocessing output directories
+preprocess_results/
+clean/
+problematic/
+problematic/invalid/
+problematic/duplicates/
+problematic/outliers/
+problematic/dark/
+problematic/blurry/
+
+# FastDup directories 
+.fastdup/
+fastdup_results/
+
+# Temporary/test files
+temp/
+tmp/
+test_output/
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.tif
+*.tiff
+*.bmp
+*.gif
+*.ico
