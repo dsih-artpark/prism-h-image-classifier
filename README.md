@@ -1,4 +1,4 @@
-# ArtPark - Mosquito Breeding Spot Analysis
+# Prism-H - Mosquito Breeding Spot Analysis
 
 ## Description
 
