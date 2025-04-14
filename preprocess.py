@@ -3,6 +3,8 @@
 import os
 import shutil
 import fastdup
+from pathlib import Path # Import Path
+import argparse # Import argparse
 
 class ImagePreprocessor:
     """
@@ -21,38 +23,39 @@ class ImagePreprocessor:
         :param ccthreshold: Threshold for similarity detection in fastdup (default 0.9).
         :param outlier_distance: Distance threshold for outlier detection (default 0.68).
         """
-        # Convert to absolute paths
-        self.input_dir = os.path.abspath(input_dir)
-        self.output_dir = os.path.abspath(output_dir)
+        # Convert to absolute paths using pathlib
+        self.input_dir = Path(input_dir).resolve()
+        self.output_dir = Path(output_dir).resolve()
         self.ccthreshold = ccthreshold
         self.outlier_distance = outlier_distance
 
-        # Folders for final categorized images
-        self.clean_folder = os.path.join(self.output_dir, "clean")
-        self.problematic_folder = os.path.join(self.output_dir, "problematic")
-        self.invalid_folder = os.path.join(self.problematic_folder, "invalid")
-        self.duplicates_folder = os.path.join(self.problematic_folder, "duplicates")
-        self.outliers_folder = os.path.join(self.problematic_folder, "outliers")
-        self.dark_folder = os.path.join(self.problematic_folder, "dark")
-        self.blurry_folder = os.path.join(self.problematic_folder, "blurry")
+        # Folders for final categorized images using pathlib
+        self.clean_folder = self.output_dir / "clean"
+        self.problematic_folder = self.output_dir / "problematic"
+        self.invalid_folder = self.problematic_folder / "invalid"
+        self.duplicates_folder = self.problematic_folder / "duplicates"
+        self.outliers_folder = self.problematic_folder / "outliers"
+        self.dark_folder = self.problematic_folder / "dark"
+        self.blurry_folder = self.problematic_folder / "blurry"
 
         # Create output directories
         self._create_directories()
     
     def _create_directories(self):
-        """Create the output directory structure."""
-        os.makedirs(self.output_dir, exist_ok=True)
-        os.makedirs(self.clean_folder, exist_ok=True)
-        os.makedirs(self.problematic_folder, exist_ok=True)
-        os.makedirs(self.invalid_folder, exist_ok=True)
-        os.makedirs(self.duplicates_folder, exist_ok=True)
-        os.makedirs(self.outliers_folder, exist_ok=True)
-        os.makedirs(self.dark_folder, exist_ok=True)
-        os.makedirs(self.blurry_folder, exist_ok=True)
+        """Create the output directory structure using pathlib."""
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.clean_folder.mkdir(parents=True, exist_ok=True)
+        self.problematic_folder.mkdir(parents=True, exist_ok=True)
+        self.invalid_folder.mkdir(parents=True, exist_ok=True)
+        self.duplicates_folder.mkdir(parents=True, exist_ok=True)
+        self.outliers_folder.mkdir(parents=True, exist_ok=True)
+        self.dark_folder.mkdir(parents=True, exist_ok=True)
+        self.blurry_folder.mkdir(parents=True, exist_ok=True)
     
     def _extract_filename(self, path):
-        """Extract just the filename from a path (relative or absolute)"""
-        return os.path.basename(path)
+        """Extract just the filename from a path (relative or absolute) using pathlib"""
+        # Assuming path is a string from fastdup, convert to Path first
+        return Path(path).name
     
     def run_preprocessing(self):
         """
@@ -140,13 +143,12 @@ class ImagePreprocessor:
         clean_count = 0
         kept_duplicates = 0
         
-        # Get a list of all image files
-        all_files = []
-        for root, _, files in os.walk(self.input_dir):
-            for f in files:
-                all_files.append((os.path.join(root, f), f))
+        # Get a list of all files using pathlib (assuming flat structure or recursion handled by fastdup already, adjust if needed)
+        # Using rglob to find all files recursively. Filter for actual files.
+        all_paths = [p for p in self.input_dir.rglob('*') if p.is_file()]
+        all_files = [(p, p.name) for p in all_paths]
         
-        print(f"Found {len(all_files)} total images in input directory")
+        print(f"Found {len(all_files)} total files in input directory: {self.input_dir}")
         
         # Process each file
         for full_path, filename in all_files:
@@ -188,10 +190,15 @@ class ImagePreprocessor:
         print(f"- Clean: {clean_count} (including {kept_duplicates} kept duplicates)")
 
     def _copy_to_folder(self, src_path, dest_folder):
-        """Copy a file to the destination folder"""
-        filename = os.path.basename(src_path)
+        """Copy a file to the destination folder using pathlib"""
+        # Ensure src_path is a Path object if it comes from all_files list
+        src_path_obj = Path(src_path) 
+        filename = src_path_obj.name 
+        # Ensure dest_folder is a Path object
+        dest_folder_obj = Path(dest_folder)
         dest_path = os.path.join(dest_folder, filename)
-        try:
+        dest_path_obj = dest_folder_obj / filename # Use pathlib join
+        try: 
             shutil.copy2(src_path, dest_path)
             return True
         except Exception as e:
@@ -215,11 +222,47 @@ class ImagePreprocessor:
         return grouped_df
 
 if __name__ == "__main__":
+    # --- Argument Parsing ---
+    parser = argparse.ArgumentParser(description="Preprocess images using fastdup to find and separate invalid, duplicate, outlier, dark, and blurry images.")
+    
+    parser.add_argument(
+        '--input-dir', 
+        required=True, 
+        type=Path, 
+        help='Path to the folder containing the input images.'
+    )
+    parser.add_argument(
+        '--output-dir', 
+        required=True, 
+        type=Path, 
+        help='Path to the folder where \'clean\' and \'problematic\' subfolders will be created.'
+    )
+    parser.add_argument(
+        '--ccthreshold', 
+        type=float, 
+        default=0.9, 
+        help='Threshold for similarity detection (connected components) in fastdup (default: 0.9).'
+    )
+    parser.add_argument(
+        '--outlier-distance', 
+        type=float, 
+        default=0.95, 
+        help='Distance threshold for outlier detection (default: 0.68).'
+    )
+
+    args = parser.parse_args()
+
+    # Basic input validation
+    if not args.input_dir.is_dir():
+        print(f"Error: Input directory not found or is not a directory: {args.input_dir}")
+        exit()
+
+    # --- Processing ---
     preprocessor = ImagePreprocessor(
-        input_dir="/Users/kirubeso.r/Documents/ArtPark/all_them_images",
-        output_dir="chatgpt_results",
-        ccthreshold=0.9,
-        outlier_distance=0.95
+        input_dir=args.input_dir,
+        output_dir=args.output_dir,
+        ccthreshold=args.ccthreshold,
+        outlier_distance=args.outlier_distance
     )
     preprocessor.run_preprocessing()
     print("Preprocessing done.")
