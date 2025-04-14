@@ -2,7 +2,7 @@
 
 ## Description
 
-Aiming to support ASHA workers, this project employs AI to analyze images of potential mosquito breeding spots, reducing data errors and improving the targeting of intervention efforts. It includes components for image preprocessing, feature extraction (embeddings), clustering, classification, object detection, and metadata integration.
+Aiming to support ASHA workers, this project employs AI models to analyze images of potential mosquito breeding spots, reducing data errors and improving the targeting of intervention efforts. It includes components for image preprocessing, feature extraction (embeddings), clustering, classification, object detection, and metadata integration.
 
 ## Project Structure
 
