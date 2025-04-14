@@ -24,7 +24,7 @@ This repository contains the following key components:
     *   `pyproject.toml`, `poetry.lock`: Poetry files for managing Python dependencies. (Generated during setup)
     *   `.gitignore`: Specifies intentionally untracked files for Git.
 
-## Workflow Overview (Inferred)
+## Workflow Overview
 
 1.  **Data Input:** Image data (location specified via configuration or arguments) and metadata from the `jsons/` directory are used.
 2.  **Preprocessing:** Images are processed by `preprocess.py` to filter out problematic images, while `json_processor.py` handles downloading and organizing images from metadata.
