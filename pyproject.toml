@@ -1,0 +1,31 @@
+[project]
+name = "prismh"
+version = "0.1.0"
+description = "Aiming to support ASHA workers, this project employs AI models to analyze images of potential mosquito breeding spots, reducing data errors and improving the targeting of intervention efforts."
+authors = [
+    {name = "Kirubes"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+starlette-prometheus = "^0.10.0"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.1"
+pydantic = "^2.11.3"
+requests = "^2.32.3"
+httpx = "^0.28.1"
+python-multipart = "^0.0.20"
+sentry-sdk = "^2.26.0"
+torch = "^2.6.0"
+torchvision = "^0.21.0"
+transformers = "^4.51.3"
+huggingface-hub = "^0.30.2"
+datasets = "^3.5.0"
+scikit-learn = "^1.6.1"
+tensorflow = "^2.19.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
