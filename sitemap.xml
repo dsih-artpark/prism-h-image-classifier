@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://your-username.github.io/prism-h/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/reference/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/reference/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/classifier/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/classifier/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/clustering/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/clustering/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/embeddings/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/embeddings/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/json-processor/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/json-processor/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/metadata-integrator/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/metadata-integrator/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/preprocess/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/preprocess/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/simclr/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/simclr/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/core/extract_embeddings/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/core/extract_embeddings/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/core/preprocess/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/core/preprocess/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/api/models/simclr/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/models/simclr/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/examples/basic_usage/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/examples/basic_usage/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/guide/configuration/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/configuration/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/guide/getting-started/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/getting-started/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/guide/installation/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/installation/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/guide/overview/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/overview/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
     <url>
-         <loc>https://your-username.github.io/prism-h/guide/quickstart/</loc>
+         <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/quickstart/</loc>
          <lastmod>2025-06-12</lastmod>
     </url>
 </urlset>
