@@ -4,6 +4,49 @@
 
 Aiming to support ASHA workers, this project employs AI models to analyze images of potential mosquito breeding spots, reducing data errors and improving the targeting of intervention efforts. It includes components for image preprocessing, feature extraction (embeddings), clustering, classification, object detection, and metadata integration.
 
+## Installation
+
+### Prerequisites
+- Python 3.11 or higher
+- Poetry (for dependency management)
+
+### Quick Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd prism-h-image-classifier
+   ```
+
+2. **Install with Poetry:**
+   ```bash
+   poetry install
+   ```
+
+3. **Activate the environment:**
+   ```bash
+   poetry shell
+   ```
+
+### Alternative Setup (if you don't have Poetry)
+
+1. **Install Poetry first:**
+   ```bash
+   curl -sSL https://install.python-poetry.org | python3 -
+   ```
+
+2. **Then follow the Quick Setup steps above**
+
+## Usage
+
+After installation, you can run the various scripts in the project:
+
+```bash
+# Example usage
+python classify.py
+python preprocess.py
+```
+
 ## Project Structure
 
 This repository contains the following key components:
@@ -33,4 +76,8 @@ This repository contains the following key components:
     *   Image embeddings are clustered using `cluster_embeddings.py` to identify groups of similar images.
     *   Images are classified into relevant categories using `classify.py`, which builds on the embeddings.
     *   Object detection models (Grounding-DINO, Owl-ViT) are explored/utilized in `object_detection.ipynb`.
-5.  **Integration:** `metadata_integrator.py` combines image analysis results with metadata, generating visualizations and reports for final insights. 
+5.  **Integration:** `metadata_integrator.py` combines image analysis results with metadata, generating visualizations and reports for final insights.
+
+## Contributing
+
+This project is maintained for ASHA worker support initiatives. 

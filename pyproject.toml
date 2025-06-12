@@ -1,11 +1,9 @@
-[project]
+[tool.poetry]
 name = "prismh"
 version = "0.1.0"
 description = "Aiming to support ASHA workers, this project employs AI models to analyze images of potential mosquito breeding spots, reducing data errors and improving the targeting of intervention efforts."
-authors = [
-    {name = "Kirubes"}
-]
-license = {text = "MIT"}
+authors = ["Kirubes"]
+license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
