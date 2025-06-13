@@ -132,7 +132,7 @@ dmypy.json
 # PyCharm
 .idea/
 
-# RStudio project files
+# RStudio project settings
 **.Rproj.user/
 **.Rproj.user*
 **.Rproj
@@ -167,3 +167,32 @@ all_them_images/
 *.png
 # Ignore compiled Python files
 *.pyo
+
+# ArtPark specific - ALL image related directories
+preprocess_results/
+clean/
+problematic/
+fastdup_ipynb_results/
+work_dir/
+metadata_analysis/
+Python_yap/
+
+# Copy of scripts
+*copy.py
+
+# ALL image files, regardless of location
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.gif
+**/*.bmp
+**/*.tif
+**/*.tiff
+**/*.ico
+**/*.svg
+**/*.webp
+**/*.heic
+**/*.raw
+
+# ALL media files
+**/*.mp4
