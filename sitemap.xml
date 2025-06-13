@@ -2,70 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/reference/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/classifier/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/clustering/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/embeddings/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/json-processor/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/metadata-integrator/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/preprocess/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/simclr/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/core/extract_embeddings/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/core/preprocess/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/api/models/simclr/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/examples/basic_usage/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/configuration/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/getting-started/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/installation/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dsih-artpark.github.io/prism-h-image-classifier/guide/quickstart/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
 </urlset>

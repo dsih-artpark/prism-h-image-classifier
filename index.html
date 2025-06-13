@@ -1023,7 +1023,7 @@
 <h3 id="resource-constraints">Resource Constraints<a class="headerlink" href="#resource-constraints" title="Permanent link">&para;</a></h3>
 <p>Limited training on effective image capture techniques leads to suboptimal data collection practices. Without real-time quality assessment or feedback mechanisms, workers cannot improve their techniques during fieldwork. Time-intensive manual sorting and analysis workflows make it difficult to scale implementation and respond quickly to newly identified breeding sites.</p>
 <h3 id="our-solution">Our Solution<a class="headerlink" href="#our-solution" title="Permanent link">&para;</a></h3>
-<p>Prism-H uses a multi-stage AI pipeline that combines machine learning, computer vision, and geospatial analysis to streamline mosquito breeding spot identification and analysis. Automated image quality assessment and data cleaning reduce the amount of manual work required. Feature learning processes images without needing extensive labeled datasets. Container type classification and object detection help identify different breeding site types. Spatial-temporal analysis using GPS coordinates and timestamps reveals patterns that emerge over time. Real-time feedback systems help optimize data collection processes in the field.</p>
+<p>Prism-H uses a multi-stage AI pipeline that combines computer vision, and geospatial analysis to streamline mosquito breeding spot identification and analysis. Automated image quality assessment and data cleaning reduce the amount of manual work required. Feature learning processes images without needing extensive labeled datasets. Container type classification and object detection help identify different breeding site types. Spatial-temporal analysis using GPS coordinates and timestamps reveals patterns that emerge over time. Real-time feedback systems help optimize data collection processes in the field.</p>
 <hr />
 <h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <h3 id="data-processing">Data Processing<a class="headerlink" href="#data-processing" title="Permanent link">&para;</a></h3>
@@ -1041,8 +1041,7 @@
 <pre class="mermaid"><code>graph TD
     A[Raw Images + Metadata] --&gt; B[Quality Assessment]
     B --&gt; C[Data Cleaning]
-    C --&gt; D[Machine Learning]
-    D --&gt; E[Feature Extraction]
+    C --&gt; E[Feature Extraction]
     E --&gt; F[Clustering Analysis]
     E --&gt; G[Classification]
     F --&gt; H[Pattern Discovery]
