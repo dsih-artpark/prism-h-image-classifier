@@ -129,6 +129,22 @@ dmypy.json
 .pyre/
 **__pycache__
 
+# Ruff cache
+.ruff_cache/
+
+# Analysis reports (regenerate with: python tools/run_all_analysis.py)
+reports/*.txt
+reports/*_report.txt
+!reports/*.md
+
+# Personal code quality tools (keep local)
+tools/
+.pre-commit-config.yaml
+CONTRIBUTING.md
+WORKFLOW.md
+SETTINGS_EXPLANATION.md
+PYPROJECT_CHANGES.md
+
 # PyCharm
 .idea/
 
@@ -155,8 +171,9 @@ venv/
 __pycache__/
 *.pyc
 
-# VSCode settings
-.vscode/
+# VSCode settings (allow settings.json for team consistency)
+.vscode/*
+!.vscode/settings.json
 
 # Jupyter stuff
 .ipynb_checkpoints/

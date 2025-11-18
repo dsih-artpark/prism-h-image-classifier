@@ -2,43 +2,18 @@
 name = "prismh"
 version = "0.1.0"
 description = "Aiming to support ASHA workers, this project employs AI models to analyze images of potential mosquito breeding spots, reducing data errors and improving the targeting of intervention efforts."
-authors = [
-    {name = "Kirubes"}
-]
-license = {text = "MIT"}
+authors = [{name = "Kirubes"}]
 readme = "README.md"
 requires-python = ">=3.11,<4.0"
-dependencies = [
-    "starlette-prometheus>=0.10.0",
-    "fastapi>=0.115.12",
-    "uvicorn>=0.34.1",
-    "pydantic>=2.11.3",
-    "requests>=2.32.3",
-    "httpx>=0.28.1",
-    "python-multipart>=0.0.20",
-    "sentry-sdk>=2.26.0",
-    "torch>=2.6.0",
-    "torchvision>=0.21.0",
-    "transformers>=4.51.3",
-    "huggingface-hub>=0.30.2",
-    "datasets>=3.5.0",
-    "scikit-learn>=1.6.1",
-    "tensorflow>=2.19.0",
-    "mkdocs (>=1.6.1,<2.0.0)",
-    "mkdocs-material (>=9.6.14,<10.0.0)",
-    "mkdocstrings (>=0.29.1,<0.30.0)",
-    "mkdocstrings-python (>=1.16.12,<2.0.0)",
-]
+license = {text = "MIT"}
+dynamic = ["dependencies"]
 
 [tool.poetry]
-name = "prismh"
-version = "0.1.0"
-description = "Aiming to support ASHA workers, this project employs AI models to analyze images of potential mosquito breeding spots, reducing data errors and improving the targeting of intervention efforts."
-authors = ["Kirubes"]
-readme = "README.md"
+package-mode = true
 
 [tool.poetry.dependencies]
 python = ">=3.11,<4.0"
+# Core runtime dependencies
 starlette-prometheus = "^0.10.0"
 fastapi = "^0.115.12"
 uvicorn = "^0.34.1"
@@ -47,14 +22,98 @@ requests = "^2.32.3"
 httpx = "^0.28.1"
 python-multipart = "^0.0.20"
 sentry-sdk = "^2.26.0"
+# ML/AI dependencies
 torch = "^2.6.0"
 torchvision = "^0.21.0"
 transformers = "^4.51.3"
 huggingface-hub = "^0.30.2"
 datasets = "^3.5.0"
 scikit-learn = "^1.6.1"
+
+# Optional: TensorFlow (install with: poetry install --with tensorflow)
+[tool.poetry.group.tensorflow]
+optional = true
+
+[tool.poetry.group.tensorflow.dependencies]
 tensorflow = "^2.19.0"
+
+# Documentation tools (install with: poetry install --with docs)
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = ">=1.6.1,<2.0.0"
+mkdocs-material = ">=9.6.14,<10.0.0"
+mkdocstrings = ">=0.29.1,<0.30.0"
+mkdocstrings-python = ">=1.16.12,<2.0.0"
+
+# Development tools (install with: poetry install --with dev)
+[tool.poetry.group.dev]
+optional = false
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+ruff = "^0.6.8"
+pytest = "^8.3.0"
+pre-commit = "^3.7.0"
+lizard = "^1.17.10"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | GroundingDINO
+)/
+'''
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src"]
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    ".mypy_cache",
+    ".ruff_cache",
+    "build",
+    "dist",
+    "GroundingDINO",
+]
+
+[tool.ruff.lint]
+select = [
+    "F",   # pyflakes
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "I",   # isort (import sorting)
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear (catches common footguns)
+]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # Allow unused imports in __init__.py files
+
+[tool.ruff.lint.isort]
+known-first-party = ["prismh"]
+force-single-line = false
+force-sort-within-sections = false
+lines-after-imports = 2
