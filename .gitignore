@@ -213,3 +213,4 @@ Python_yap/
 
 # ALL media files
 **/*.mp4
+.DS_Store
