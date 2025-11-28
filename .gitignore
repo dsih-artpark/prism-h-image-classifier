@@ -214,3 +214,17 @@ Python_yap/
 # ALL media files
 **/*.mp4
 .DS_Store
+
+# Large Data Folders (ArtPark)
+int_7th100k/
+report_images/
+annotated_images_download/
+images_download/
+simclr_finetuned/
+simclr_profiling_output/
+visualized_annotations/
+
+# Model Weights
+*.pth
+*.pt
+*.onnx
