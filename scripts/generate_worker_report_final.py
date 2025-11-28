@@ -39,8 +39,7 @@ import pandas as pd
 from tqdm import tqdm
 
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
-from visualization_utils import VisualizationUtils
+from src.prismh.utils.visualization_utils import VisualizationUtils
 
 
 # ============================================================================

@@ -103,7 +103,7 @@ class VisualizationUtils:
         # Create sorted items if requested
         if sort:
             items = sorted(data.items(), key=lambda x: x[1], reverse=True)
-            labels, values = zip(*items)
+            labels, values = zip(*items, strict=False)
         else:
             labels = list(data.keys())
             values = list(data.values())
@@ -265,7 +265,7 @@ class VisualizationUtils:
             annotation_text = f"Total: {total}"
 
             # Add individual counts
-            for label, size in zip(labels, sizes):
+            for label, size in zip(labels, sizes, strict=False):
                 annotation_text += f"\n{label}: {size}"
 
             plt.annotate(
@@ -331,7 +331,7 @@ class VisualizationUtils:
             cmap = plt.cm.get_cmap("viridis")
             norm = plt.Normalize(min(data), max(data))
 
-            for c, p in zip(bin_centers, patches):
+            for c, p in zip(bin_centers, patches, strict=False):
                 plt.setp(p, "facecolor", cmap(norm(c)))
 
         # Add vertical line if requested
@@ -1798,9 +1798,9 @@ class VisualizationUtils:
         for i, col in enumerate(existing_columns):
             marker = markers[i % len(markers)]
             ax2.plot(
-                x, 
-                ward_stats[f'{col}_pct'], 
-                marker=marker, 
+                x,
+                ward_stats[f'{col}_pct'],
+                marker=marker,
                 linestyle='--',
                 linewidth=1.5,
                 markersize=6,
